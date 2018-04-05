@@ -21,7 +21,7 @@
                 android:id="@+id/tv_date"
                 android:layout_width="180dp"
                 android:layout_height="50dp"
-                android:text="Apr 2018"
+                android:text="2018 Apr"
                 android:textAppearance="?android:attr/textAppearanceLargeInverse"
                 android:textStyle="bold"
                 android:clickable="true"
