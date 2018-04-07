@@ -20,13 +20,11 @@ public interface ItemDao {
     @Query("SELECT * FROM item WHERE iyear_month LIKE :year_month")
     LiveData<List<Item>> findByYearAndMonth (String year_month);
 
-    @Query("SELECT * FROM item WHERE iclass LIKE 'expense'")
-    LiveData<List<Item>> getAllExpenses ();
+    @Query("SELECT * FROM item WHERE iclass LIKE 'expense' AND iyear_month LIKE :year_month")
+    LiveData<List<Item>> getAllExpenses (String year_month);
 
-    @Query("SELECT * FROM item WHERE iclass LIKE 'revenue'")
-    LiveData<List<Item>> getAllRevenues ();
-
-
+    @Query("SELECT * FROM item WHERE iclass LIKE 'revenue' AND iyear_month LIKE :year_month")
+    LiveData<List<Item>> getAllRevenues (String year_month);
 
 
     @Insert

@@ -14,7 +14,7 @@ public class MonthlyStatus {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "mid")
-    public String mid;
+    public int mid;
 
     @ColumnInfo(name = "myear_month")
     public String myear_month;
@@ -32,11 +32,11 @@ public class MonthlyStatus {
     public double mused;
 
     @NonNull
-    public String getMid() {
+    public int getMid() {
         return mid;
     }
 
-    public void setMid(@NonNull String mid) {
+    public void setMid(@NonNull int mid) {
         this.mid = mid;
     }
 

@@ -122,7 +122,7 @@ public class CertainItemsActivity extends AppCompatActivity {
 
                 final ListView lv_history = (ListView) rootView.findViewById(R.id.lv_history);
 
-                db.itemDao().getAllExpenses().observe(this, new Observer<List<Item>>() {
+                db.itemDao().getAllExpenses(iyear_month).observe(this, new Observer<List<Item>>() {
                     @Override
                     public void onChanged(@Nullable List<Item> items) {
 
@@ -138,7 +138,7 @@ public class CertainItemsActivity extends AppCompatActivity {
 
                 final ListView lv_history = (ListView) rootView.findViewById(R.id.lv_history);
 
-                db.itemDao().getAllRevenues().observe(this, new Observer<List<Item>>() {
+                db.itemDao().getAllRevenues(iyear_month).observe(this, new Observer<List<Item>>() {
                     @Override
                     public void onChanged(@Nullable List<Item> items) {
 

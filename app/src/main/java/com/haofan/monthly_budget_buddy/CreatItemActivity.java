@@ -125,11 +125,10 @@ public class CreatItemActivity extends AppCompatActivity {
             Intent intent = getActivity().getIntent();
             final String iyear_month = intent.getStringExtra("Year_Month");
 
-
+            //Creat expense page
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1){
                 View rootView = inflater.inflate(R.layout.fragment_expense_tab, container, false);
 
-                List<String> list_type, list_src;
                 final String[] itype = new String[1];
                 final String[] isource = new String[1];
 
@@ -232,9 +231,6 @@ public class CreatItemActivity extends AppCompatActivity {
                     }
                 });
 
-
-
-
                 //Create Button onClickListener
                 btn_create.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -263,15 +259,75 @@ public class CreatItemActivity extends AppCompatActivity {
                     }
                 });
 
-
-
-
-
                 return rootView;
 
+                //Create Revenue page
             }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2){
                 View rootView = inflater.inflate(R.layout.fragment_revenue_tab, container, false);
+
+                final String[] isource = new String[1];
+
+                final EditText et_amount = (EditText)rootView.findViewById(R.id.et_amount);
+                final EditText et_note = (EditText)rootView.findViewById(R.id.et_note);
+                Button btn_create = (Button)rootView.findViewById(R.id.btn_create);
+
+                //Set spinners
+                final Spinner sp_src=(Spinner)rootView.findViewById(R.id.sp_src);
+
+                //Adapter for sp_src
+                String[] Items_src = getResources().getStringArray(R.array.rev_src);
+                final ArrayAdapter<String> adapter_src = new ArrayAdapter<String>(getActivity(),
+                        android.R.layout.simple_spinner_item, Items_src);
+                adapter_src.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                sp_src.setAdapter(adapter_src);
+
+                //Spinner Item selected event
+                sp_src.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view,
+                                               int pos, long id) {
+                        //Set text size
+                        ((TextView) parent.getChildAt(0)).setTextSize(20);
+
+                        //Get selected value
+                        isource[0] = parent.getSelectedItem().toString();
+
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        // Another interface callback
+                    }
+                });
+
+                //Create Button onClickListener
+                btn_create.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Build Item
+                        Item item = new Item();
+                        item.setIdatetime(curDatetime);
+                        item.setIyear_month(iyear_month);
+                        item.setInote(et_note.getText().toString());
+                        item.setIclass("revenue");
+                        item.setIsource(isource[0]);
+                        if (et_amount.getText().length()>0){
+                            item.setIamount(Double.parseDouble(et_amount.getText().toString()));
+                        }else {
+                            item.setIamount(0.0);
+                        }
+
+                        db.itemDao().insert(item);
+
+                        Toast.makeText(getActivity(), "Created successfully!", Toast.LENGTH_SHORT).show();
+
+                        Intent i = new Intent(getActivity(), MainActivity.class);
+                        startActivity(i);
+
+                    }
+                });
+
                 return rootView;
+
             }else {
                 View rootView = inflater.inflate(R.layout.fragment_creat_item, container, false);
                 TextView textView = (TextView) rootView.findViewById(R.id.section_label);

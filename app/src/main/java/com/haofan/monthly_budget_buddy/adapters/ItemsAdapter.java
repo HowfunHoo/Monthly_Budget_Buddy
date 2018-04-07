@@ -53,11 +53,22 @@ public class ItemsAdapter extends BaseAdapter {
         TextView tv_itype = (TextView) convertView.findViewById(R.id.tv_itype);
         TextView tv_isource = (TextView) convertView.findViewById(R.id.tv_isource);
         TextView tv_iamount = (TextView) convertView.findViewById(R.id.tv_iamount);
+        TextView tv_connector = (TextView) convertView.findViewById(R.id.tv_connector);
 
         final Item item = (Item)this.getItem(position);
 
         //////////
         System.out.println("adapter_items "+item.getIamount());
+
+        if (item.getIclass().equalsIgnoreCase("revenue")){
+            tv_itype.setVisibility(View.GONE);
+            tv_connector.setVisibility(View.GONE);
+
+            //Set tv_isource wider in dp units
+            final float scale = context.getResources().getDisplayMetrics().density;
+            int pixels = (int) (800 * scale + 0.5f);
+            tv_isource.setWidth(pixels);
+        }
 
         tv_itype.setText(item.getItype());
         tv_isource.setText(item.getIsource());

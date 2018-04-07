@@ -62,4 +62,17 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="rev_src">
+        <item>Scholarships, grants and bursaries</item>
+        <item>Part-time work</item>
+        <item>Registered Education Savings Plan</item>
+        <item>Student loans</item>
+        <item>Family contributions</item>
+        <item>Other personal savings</item>
+        <item>Gifts</item>
+        <item>other</item>
+    </string-array>
+
+
+
 </resources>
