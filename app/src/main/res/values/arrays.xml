@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="exp_type">
+        <item>Education</item>
+        <item>Housing</item>
+        <item>Food</item>
+        <item>Transportation</item>
+        <item>Miscellaneous</item>
+        <item>Health</item>
+    </string-array>
+
+    <string-array name="exp_src_edu">
+        <item>Tuition</item>
+        <item>Fees (lab, library, gym)</item>
+        <item>Other course material</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="exp_src_house">
+        <item>Rent/mortgage payments</item>
+        <item>Residence fees</item>
+        <item>OGroceries/meal plan</item>
+        <item>Utilities</item>
+        <item>Cable</item>
+        <item>Internet</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="exp_src_food">
+        <item>Groceries</item>
+        <item>Meal plan</item>
+        <item>Take-out/order in</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="exp_src_trans">
+        <item>Public transit</item>
+        <item>Parking</item>
+        <item>Gas</item>
+        <item>Car insurance</item>
+        <item>Car payments</item>
+        <item>Maintenance and repairs</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="exp_src_misc">
+        <item>Cell phone</item>
+        <item>Clothing</item>
+        <item>Computer</item>
+        <item>Entertainment</item>
+        <item>Personal grooming</item>
+        <item>Travel</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="exp_src_heal">
+        <item>Medical insurance</item>
+        <item>Dental insurance</item>
+        <item>Medical/dental procedures</item>
+        <item>Prescriptions</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>

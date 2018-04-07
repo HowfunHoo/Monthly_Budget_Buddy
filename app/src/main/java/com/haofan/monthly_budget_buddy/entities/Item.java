@@ -3,6 +3,7 @@ package com.haofan.monthly_budget_buddy.entities;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverter;
 import android.support.annotation.NonNull;
 
 import java.util.Date;
@@ -13,13 +14,10 @@ public class Item {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "iid")
     @NonNull
-    public String iid;
+    public int iid;
 
     @ColumnInfo(name = "idate")
-    public Date idate;
-
-    @ColumnInfo(name = "itime")
-    public Date itime;
+    public Date idatetime;
 
     @ColumnInfo(name = "iyear_month")
     public String iyear_month;
@@ -40,20 +38,20 @@ public class Item {
     public double iamount;
 
     @NonNull
-    public String getIid() {
+    public int getIid() {
         return iid;
     }
 
-    public void setIid(@NonNull String iid) {
+    public void setIid(@NonNull int iid) {
         this.iid = iid;
     }
 
-    public Date getIdate() {
-        return idate;
+    public Date getIdatetime() {
+        return idatetime;
     }
 
-    public void setIdate(Date idate) {
-        this.idate = idate;
+    public void setIdatetime(Date idatetime) {
+        this.idatetime = idatetime;
     }
 
     public String getIyear_month() {
@@ -104,11 +102,4 @@ public class Item {
         this.iamount = iamount;
     }
 
-    public Date getItime() {
-        return itime;
-    }
-
-    public void setItime(Date itime) {
-        this.itime = itime;
-    }
 }

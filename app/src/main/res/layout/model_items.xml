@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    android:layout_height="40dp"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_itype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textSize="17sp"
+            android:paddingTop="8dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=">"
+            android:textSize="17sp"
+            android:paddingTop="8dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="5dp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_isource"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Source"
+            android:textSize="17sp"
+            android:paddingTop="8dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="8dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_iamount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10000.00"
+            android:textSize="17sp"
+            android:paddingTop="8dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="8dp"
+            android:gravity="right"
+            android:paddingRight="8dp"/>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
