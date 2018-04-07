@@ -10,5 +10,6 @@
     <color name="colorDeepOrange">#FF9900</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGrey">#999999</color>
+    <color name="colorDeepRed">#FF0000</color>
 
 </resources>

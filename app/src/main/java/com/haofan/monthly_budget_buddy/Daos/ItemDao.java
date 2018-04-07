@@ -17,6 +17,9 @@ public interface ItemDao {
     @Query("SELECT * FROM item ORDER BY idate DESC")
     LiveData<List<Item>> getAll();
 
+    @Query("SELECT * FROM item WHERE iid LIKE :id")
+    LiveData<Item> findById(int id);
+
     @Query("SELECT * FROM item WHERE iyear_month LIKE :year_month")
     LiveData<List<Item>> findByYearAndMonth (String year_month);
 
@@ -26,12 +29,13 @@ public interface ItemDao {
     @Query("SELECT * FROM item WHERE iclass LIKE 'revenue' AND iyear_month LIKE :year_month")
     LiveData<List<Item>> getAllRevenues (String year_month);
 
+    @Query("DELETE FROM item WHERE iid = :id")
+    void deleteById(int id);
 
     @Insert
     void insert(Item item);
 
     @Delete
     void delete(Item item);
-
 
 }

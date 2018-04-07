@@ -2,12 +2,15 @@ package com.haofan.monthly_budget_buddy.adapters;
 
 import android.arch.lifecycle.LiveData;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.haofan.monthly_budget_buddy.EditItemActivity;
 import com.haofan.monthly_budget_buddy.MainActivity;
 import com.haofan.monthly_budget_buddy.R;
 import com.haofan.monthly_budget_buddy.entities.Item;
@@ -87,9 +90,26 @@ public class ItemsAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 //OPEN Update info
+                editItem(item);
             }
         });
 
         return convertView;
+    }
+
+    public void editItem(Item item){
+
+        //build Intent to EditItemActivity
+        Intent intent = new Intent(context, EditItemActivity.class);
+        intent.putExtra("iid", item.getIid());
+        intent.putExtra("idatetime", item.getIdatetime().getTime());
+        intent.putExtra("iyear_month", item.getIyear_month());
+        intent.putExtra("inote", item.getInote());
+        intent.putExtra("iclass", item.getIclass());
+        intent.putExtra("itype", item.getItype());
+        intent.putExtra("isource", item.getIsource());
+        intent.putExtra("iamount", item.getIamount());
+
+        context.startActivity(intent);
     }
 }

@@ -19,11 +19,12 @@
         <activity
             android:name=".CreatItemActivity"
             android:label="@string/title_activity_creat_item"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".CertainItemsActivity"
             android:label="@string/title_activity_certain_items"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".EditItemActivity"></activity>
     </application>
 
 </manifest>
