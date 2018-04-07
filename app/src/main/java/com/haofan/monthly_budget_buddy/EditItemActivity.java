@@ -43,10 +43,10 @@ public class EditItemActivity extends AppCompatActivity {
         //GET DATA FROM INTENT
         Intent intent = getIntent();
         final int iid = intent.getIntExtra("iid",0);
-        Date idatetime = new Date(intent.getLongExtra("idatetime", 0));
-        String iyear_month = intent.getStringExtra("iyear_month");
-        String inote = intent.getStringExtra("inote");
-        String iclass = intent.getStringExtra("iclass");
+        final Date idatetime = new Date(intent.getLongExtra("idatetime", 0));
+        final String iyear_month = intent.getStringExtra("iyear_month");
+        final String inote = intent.getStringExtra("inote");
+        final String iclass = intent.getStringExtra("iclass");
         final String[] itype = {intent.getStringExtra("itype")};
         final String isource = intent.getStringExtra("isource");
         double iamount = intent.getDoubleExtra("iamount",0);
@@ -223,6 +223,30 @@ public class EditItemActivity extends AppCompatActivity {
                 Toast.makeText(EditItemActivity.this, "Deleted successfully!", Toast.LENGTH_SHORT).show();
                 Intent i =new Intent(EditItemActivity.this, MainActivity.class);
                 startActivity(i);
+            }
+        });
+
+        //Update item
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Item item = new Item();
+                item.setIid(iid);
+                item.setIdatetime(idatetime);
+                item.setIyear_month(iyear_month);
+                item.setInote(et_note.getText().toString());
+                item.setIclass(iclass);
+                item.setItype(type[0]);
+                item.setIsource(source[0]);
+                item.setIamount(Double.parseDouble(et_amount.getText().toString()));
+
+                db.itemDao().update(item);
+
+                Toast.makeText(EditItemActivity.this, "Updated successfully!", Toast.LENGTH_SHORT).show();
+                Intent i =new Intent(EditItemActivity.this, MainActivity.class);
+                startActivity(i);
+
             }
         });
 
