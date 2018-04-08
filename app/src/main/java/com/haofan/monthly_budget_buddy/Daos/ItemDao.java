@@ -21,7 +21,7 @@ public interface ItemDao {
     @Query("SELECT * FROM item WHERE iid LIKE :id")
     LiveData<Item> findById(int id);
 
-    @Query("SELECT * FROM item WHERE iyear_month LIKE :year_month")
+    @Query("SELECT * FROM item WHERE iyear_month LIKE :year_month ORDER BY idate DESC")
     LiveData<List<Item>> findByYearAndMonth (String year_month);
 
     @Query("SELECT * FROM item WHERE iclass LIKE 'expense' AND iyear_month LIKE :year_month")

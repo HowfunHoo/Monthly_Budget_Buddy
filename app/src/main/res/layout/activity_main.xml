@@ -28,7 +28,8 @@
                 android:clickable="true"
                 android:layout_marginTop="18dp"
                 android:paddingLeft="25dp"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:focusable="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,17 +50,32 @@
                         android:paddingTop="5dp"
                         android:textSize="18sp"
                         />
-
-                    <TextView
-                        android:id="@+id/tv_expense"
+                    <LinearLayout
+                        android:id="@+id/ll_expense"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="900.99"
-                        android:paddingLeft="25dp"
-                        android:textSize="25sp"
-                        android:textColor="@color/colorRed"
-                        android:clickable="true"
-                        />
+                        android:orientation="horizontal"
+                        android:clickable="true">
+                        <TextView
+                            android:id="@+id/tv_expense"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.0"
+                            android:paddingLeft="25dp"
+                            android:textSize="25sp"
+                            android:textColor="@color/colorRed"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="25sp"
+                            android:textColor="@color/colorGrey"
+                            android:text=" >"/>
+
+
+                    </LinearLayout>
+
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -70,16 +86,32 @@
                         android:textSize="18sp"
                         />
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/ll_revenue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7834.99"
-                        android:id="@+id/tv_revenue"
-                        android:paddingLeft="25dp"
-                        android:textSize="25sp"
-                        android:textColor="@color/colorGreen"
-                        android:clickable="true"
-                        />
+                        android:orientation="horizontal"
+                        android:clickable="true">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.0"
+                            android:id="@+id/tv_revenue"
+                            android:paddingLeft="25dp"
+                            android:textSize="25sp"
+                            android:textColor="@color/colorGreen"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="25sp"
+                            android:textColor="@color/colorGrey"
+                            android:text=" >"/>
+
+
+                    </LinearLayout>
+
+
 
 
                 </LinearLayout>
@@ -99,40 +131,62 @@
                         android:textSize="18sp"
                         />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_budget"
-                        android:text="100000"
-                        android:paddingLeft="25dp"
-                        android:textSize="25sp"
-                        android:clickable="true"
-                        />
+                        android:orientation="horizontal"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_budget"
+                            android:text="0"
+                            android:paddingLeft="25dp"
+                            android:textSize="25sp"
+                            android:clickable="true"
+                            android:textColor="@color/colorBlack"
+                            />
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ic_editable"
+                            android:layout_gravity="center_vertical"/>
+
+
+                    </LinearLayout>
+
+
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/tv_used"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="66%"
+                            android:lines="1"
+                            android:text="0%"
                             android:paddingLeft="25dp"
                             android:paddingTop="5dp"
                             android:textSize="45sp"
                             android:textStyle="bold"
                             android:textColor="@color/colorWhite"
+                            android:layout_marginBottom="-12dp"
                             />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="used"
+                            android:text="expended"
                             android:paddingLeft="10dp"
-                            android:paddingTop="5dp"
                             android:textSize="15sp"
+                            android:layout_gravity="end"
+                            android:textColor="@color/colorGrey"
                             />
 
 

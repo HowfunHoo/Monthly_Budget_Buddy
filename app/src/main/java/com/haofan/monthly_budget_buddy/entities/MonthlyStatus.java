@@ -76,6 +76,10 @@ public class MonthlyStatus {
         return (this.mexpense - this.mrevenue)/this.mbudget;
     }
 
+    public void setMused(double mused){
+        this.mused = mused;
+    }
+
     public void setMused(double mexpense, double mrevenue, double mbudget) {
         this.mused = (mexpense - mrevenue)/mbudget;
     }
